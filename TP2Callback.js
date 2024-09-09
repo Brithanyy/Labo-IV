@@ -279,6 +279,7 @@ const ejercicioA2 = () => {
             nombre: "Paola",
             id: 3
         }];
+
     let array2 = [
         {
             id: 1,
@@ -292,11 +293,4 @@ const ejercicioA2 = () => {
         }];
 
         let arreglo = [];
-
-        let map1 = new Map(...array1);
-        let map2 = new Map(...array2);
-        
-        map1.forEach((valor, clave) => {
-            if(map2.hash(clave)) arreglo.push({clave: valor})
-        });
  };
