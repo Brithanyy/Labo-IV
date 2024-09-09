@@ -24,9 +24,16 @@ console.log(btnAdd);
 btnAdd.addEventListener("click", () => {
     ///console.log(inputTarea.value); para acceder lo que guarda el valor del input.
     if(inputTarea.value == ''){
-        alert("Error");
+       ///DIV ERROR
+        const error = document.getElementById("error");
+        error.innerText = "Error, el input no puede estar vacio";
+        error.style.color = "red";
+        setTimeout(() => {
+            error.innerText = "";
+        },2000);
+       
         return;
-    } 
+    };
     const tarea = new Tarea(inputTarea.value);
     addList(tarea);
 });
@@ -36,4 +43,4 @@ function addList(tarea){
     li.style("text")
     li.textContent = tarea.nombre;
     lista.appendChild(li);
-}
+};
