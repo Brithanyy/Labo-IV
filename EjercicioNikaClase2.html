@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <title>Ejercicios Nika</title>
+    <style>
+        #particles-js {
+            position: fixed; /* Usar fixed para mantener el fondo en su lugar */
+            top: 0;
+            left: 0;
+            width: 100vw; /* Asegura el ancho completo del viewport */
+            height: 100vh; /* Asegura la altura completa del viewport */
+            z-index: 1; /* Debe estar por debajo de otros elementos */
+            background-color: rgb(0, 0, 0); /* Color de fondo por si particles.js no carga */
+        }
+        #titulo {
+            z-index: 2;
+        }
+    </style>
+</head>
+<body id="particles-js">
+    
+    <h1 class="text-black text-center bg-warning border-bottom border-warning border-4" id="titulo">Ejercicios Nika</h1>
+    <div class="container text-center">
+        <div class="row">
+          <div class="col">
+            <button type="button" class="btn btn-outline-warning btn-lg fw-bold" onclick="ejercicio1()">Ejercicio 1</button>
+          </div>
+          <div class="col">
+            <button type="button" class="btn btn-outline-warning btn-lg fw-bold" onclick="ejercicio2()">Ejercicio 2</button>
+          </div>
+          <div class="col">
+            <button type="button" class="btn btn-outline-warning btn-lg fw-bold" onclick="ejercicio3()">Ejercicio 3</button>
+          </div>
+          <div class="col">
+            <button type="button" class="btn btn-outline-warning btn-lg fw-bold" onclick="ejercicio4()">Ejercicio 4</button>
+          </div>
+          <div class="col">
+            <button type="button" class="btn btn-outline-warning btn-lg fw-bold" onclick="ejercicio5()">Ejercicio 5</button>
+          </div>
+          <div class="col">
+            <button type="button" class="btn btn-outline-warning btn-lg fw-bold" onclick="ejercicio6()">Ejercicio 6</button>
+          </div>
+          <div class="col">
+            <button type="button" class="btn btn-outline-warning btn-lg fw-bold" onclick="ejercicio7()">Ejercicio 7</button>
+          </div>
+        </div>
+      </div>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+    <script src="particles.min.js"></script>
+    <script>
+        particlesJS(
+            {
+  "particles": {
+    "number": {
+      "value": 80,
+      "density": {
+        "enable": true,
+        "value_area": 800
+      }
+    },
+    "color": {
+      "value": "#ffffff"
+    },
+    "shape": {
+      "type": "circle",
+      "stroke": {
+        "width": 0,
+        "color": "#000000"
+      },
+      "polygon": {
+        "nb_sides": 5
+      },
+      "image": {
+        "src": "img/github.svg",
+        "width": 100,
+        "height": 100
+      }
+    },
+    "opacity": {
+      "value": 0.5,
+      "random": false,
+      "anim": {
+        "enable": false,
+        "speed": 1,
+        "opacity_min": 0.1,
+        "sync": false
+      }
+    },
+    "size": {
+      "value": 3,
+      "random": true,
+      "anim": {
+        "enable": false,
+        "speed": 40,
+        "size_min": 0.1,
+        "sync": false
+      }
+    },
+    "line_linked": {
+      "enable": true,
+      "distance": 150,
+      "color": "#ffffff",
+      "opacity": 0.4,
+      "width": 1
+    },
+    "move": {
+      "enable": true,
+      "speed": 6,
+      "direction": "none",
+      "random": false,
+      "straight": false,
+      "out_mode": "out",
+      "bounce": false,
+      "attract": {
+        "enable": false,
+        "rotateX": 600,
+        "rotateY": 1200
+      }
+    }
+  },
+  "interactivity": {
+    "detect_on": "canvas",
+    "events": {
+      "onhover": {
+        "enable": true,
+        "mode": "repulse"
+      },
+      "onclick": {
+        "enable": true,
+        "mode": "push"
+      },
+      "resize": true
+    },
+    "modes": {
+      "grab": {
+        "distance": 400,
+        "line_linked": {
+          "opacity": 1
+        }
+      },
+      "bubble": {
+        "distance": 400,
+        "size": 40,
+        "duration": 2,
+        "opacity": 8,
+        "speed": 3
+      },
+      "repulse": {
+        "distance": 200,
+        "duration": 0.4
+      },
+      "push": {
+        "particles_nb": 4
+      },
+      "remove": {
+        "particles_nb": 2
+      }
+    }
+  },
+  "retina_detect": true
+}
+        )
+    </script>
+    <script src="EjercicioNikaClase2.js"></script>
+</body>
+</html>
