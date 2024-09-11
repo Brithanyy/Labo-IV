@@ -265,32 +265,3 @@ const ejercicioA2 = () => {
     console.log("Mostrando el objeto: ");
     console.log(obj);
  };
-
- const ejercicioA7 = () => {
-
-    let array1 = [
-        {
-            nombre: "Rocio",
-            id: 1
-        }, {
-            nombre: "Brisa",
-            id: 2
-        }, {
-            nombre: "Paola",
-            id: 3
-        }];
-
-    let array2 = [
-        {
-            id: 1,
-            nota : 10
-        }, {
-            id: 2,
-            nota: 6
-        },{
-            id: 3,
-            nota: 8
-        }];
-
-        let arreglo = [];
- };

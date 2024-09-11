@@ -1,0 +1,17 @@
+html, body {
+    height: 100%;
+}
+body {
+    background-color: #FBFCFF;
+    display: flex;
+    flex-direction: column;
+}
+#colorNav {
+    background-color: #274156;
+}
+.cuadrado {
+    width: 200px;
+    height: 200px;
+    background-color: blue;
+    border: 3px solid black;
+}
