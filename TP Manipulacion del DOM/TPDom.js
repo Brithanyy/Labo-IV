@@ -1,39 +1,11 @@
 
-const ejercicio1 = () => {
-    const miParrafo = document.getElementById("miParrafo");
-    const botonParrafo = document.getElementById("botonParrafo");
-    
-    botonParrafo.addEventListener('click', () => {
-        miParrafo.innerText = "Hola Mundo :D";
-    });  
-}
+import { ejercicio1 } from "./ejercicio1.js";
 
-const ejercicio2 = () => {
-const resaltado = document.getElementById("miDiv");
-resaltado.classList.add("resaltado"); ///Le agregamos una clase al div
-console.log(resaltado);
-}
+import { ejercicio2 } from "./ejercicio2.js";
 
-const ejercicio3 = () => {
-    const ul = document.getElementById("miLista");
-    const elementosDelUl = ul.getElementsByTagName("li");
-    console.log(ul);
-    console.log(elementosDelUl);
-    elementosDelUl[1].remove();
-    console.log(elementosDelUl);
-}
+import { ejercicio3 } from "./ejercicio3.js";
 
-const ejercicio4 = () => {
-    const boton2 = document.getElementById("boton2");
-    boton2.addEventListener("click", () => {
-        boton2.style.backgroundColor = "red";
-        alert("Hiciste Click");
-
-        setTimeout( () => {
-            boton2.style.backgroundColor = "white";
-        },2000)
-    })
-}
+import { ejercicio4 } from "./ejercicio4.js";
 
 const ejercicio5 = () => {
     const cuadrado = document.getElementById("cuadrado");
@@ -60,8 +32,83 @@ const ejercicio7 = () => {
     const teclaClickeada = document.getElementById("teclaClickeada");
     document.addEventListener("keydown", (tecla) => {
         teclaClickeada.textContent = tecla.key;
+        console.log(tecla.key);
         document.appendChild(teclaClickeada);
     })
+}
+
+const colorAleatorio = () => {
+    const max = 16777215;
+    return "#" + Math.floor(Math.random() * max).toString(16).padStart(6, '0');
+ }
+
+ const ejercicio8 = () => {
+    const ulLista = document.getElementsByClassName("lista2");
+    console.log(ulLista);
+    for(let i = 0; i < ulLista.length; i++) {
+        ulLista[i].addEventListener("click", () => {
+            ulLista[i].style.backgroundColor = colorAleatorio();
+             setTimeout(() => {
+                   ulLista[i].style.backgroundColor = "transparent";
+              },2000)
+         })
+      }
+}
+
+const ejercicio9 = () => {
+    let contador = 0;
+    const contadorClick = document.getElementById("click");
+    const divBoton = document.getElementById("divDelBotonClick");
+     contadorClick.addEventListener("click",() => {
+        contador += 1;
+        console.log(contador);
+        const parrafo = document.createElement("p");
+        parrafo.textContent = contador;
+        divBoton.appendChild(parrafo);
+        setTimeout(() => {
+             parrafo.remove();
+        },1000)
+    })
+}
+
+const ejercicio10 = () => {
+    const imagen = document.getElementById("imagen");
+    const parrafoImagen = document.getElementById("parrafoImagen");
+    parrafoImagen.style.display = "none";
+
+    imagen.addEventListener("click", () => {
+        parrafoImagen.style.display = "block";
+        parrafoImagen.textContent = "Nueva Lata de Aperol Spritz !!!";
+        parrafoImagen.style.backgroundColor = "#FB5012";
+        parrafoImagen.style.color = "white";
+        setTimeout( () => {
+            parrafoImagen.style.display = "none";
+        },1000);
+    });
+}
+
+import { ejercicio11 } from "./ejercicio11.js";
+
+const ejercicio12 = () => {
+    const selecMenu = document.getElementById("lang");
+    selecMenu.addEventListener("change", () => {
+        const opcionSeleccionada = selecMenu.value;
+        console.log(opcionSeleccionada);
+    })
+}
+
+const ejercicio13 = () => {
+    
+    const actualizarSegundos = () => {
+        const horaActual = new Date();
+        const hora = String(horaActual.getHours()).padStart(2, '0');
+        const minutos = String(horaActual.getMinutes()).padStart(2, '0');
+        const segundos = String(horaActual.getSeconds()).padStart(2, '0');
+
+        const mostrarSegundos = document.getElementById("segundosActual");
+        mostrarSegundos.textContent = `${hora}:${minutos}:${segundos}`;
+    }
+    setInterval(actualizarSegundos, 1000);  
 }
 
 /*
@@ -71,5 +118,11 @@ ejercicio3();
 ejercicio4();
 ejercicio5();
 ejercicio6();
-*/
 ejercicio7();
+ejercicio8();
+ejercicio9();
+ejercicio10();
+ejercicio11();
+ejercicio12();
+ejercicio13();
+*/
