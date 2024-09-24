@@ -42,18 +42,21 @@ export const getUsers = () => {
         .catch(err => console.error(err))
 };
 
-// getUsers();
 
 export const fromUsers = () => {
     fetch(api) 
         .then(response => response.json())
         .then(data => {
             for (let user of data) {
-                fetch(usersJson, {method: 'POST', body: JSON.stringify(user)})
+                fetch(usersJson, {headers: {'Content-Type': "application/json"},method: "POST", body: JSON.stringify(user)})
                 .catch(err => console.error(err))
             }
         })
         .catch(err => console.error(err))
 } 
 
-// fromUsers();
+export const usuarios = () => {
+    return fetch(usersJson)
+        .then(response => response.json())
+        .catch(err => console.error(err))
+}

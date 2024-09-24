@@ -1,7 +1,7 @@
-const api = 'https://jsonplaceholder.typicode.com/photos';
-const usersJson = 'http://localhost:3000/photos';
+const api = 'https://jsonplaceholder.typicode.com/albums';
+const usersJson = 'http://localhost:3000/albums';
 
-export const getPhotos = () => {
+export const getAlbums = () => {
     fetch(api)
         .then(response => response.json())
         .then(data => {
@@ -13,8 +13,7 @@ export const getPhotos = () => {
 };
 
 
-
-export const fromPhotos = () => {
+export const fromAlbums = () => {
     fetch(api) 
         .then(response => response.json())
         .then(data => {
