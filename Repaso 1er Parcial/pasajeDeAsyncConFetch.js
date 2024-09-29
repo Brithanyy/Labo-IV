@@ -41,3 +41,40 @@ const getUsersFetch = () => {
     .catch(err => console.error(err))
 }
 
+//! Utilizando async/await + try-catch
+
+const url = "https://api.example.com/users";
+
+async function funcAsync() {
+    
+    try {
+        const response = await fetch(url); //? No se le pasa ningun metodo ni headers ni body xq es get
+        if(!response.ok) throw new Error(`El servidor respondió: ${response.status}${response.statusText}`);
+        const usuarios = await response.json();
+
+        const usuariosFiltrados = usuarios.filter(user => user.isActive).sort((a,b) => a.username.localeCompare(b.username));
+
+        //TODO Utilizando un forOf 
+        for (const user of usuariosFiltrados) console.log(user);
+        
+        //TODO Utilizando un forEach
+        usuariosFiltrados.forEach(user => console.log(user));
+
+    } catch (error) {
+        console.error(error);
+    }
+}
+
+//! Utilizando then y catch
+
+fetch(url)
+    .then(response => {
+        if(!response.ok) throw new Error(`El servidor respondió: ${response.status}${response.statusText}`)
+        return response.json();
+    })
+    .then(usuarios => {
+        const usuariosFiltrados = usuarios.filter(user => user.isActive).sort((a,b) => a.username.localeCompare(b.username));
+
+        for (const user of usuariosFiltrados) console.log(user);
+    })
+    .catch(err => console.error(err))

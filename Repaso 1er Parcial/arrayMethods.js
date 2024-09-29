@@ -38,3 +38,108 @@ const promedio = studentsMap.reduce((acumulador, estudiante) => {
 const promedioConDosDecimales = promedio.toFixed(2);
 console.log(promedio);
 
+
+
+
+
+const estudiantes = [
+    { name: 'Juan', id: 1, grade: 7 },
+    { name: 'Pedro', id: 2, grade: 4 },
+    { name: 'Carlos', id: 3, grade: 8 },
+    { name: 'Ana', id: 4, grade: 9 },
+    { name: 'Maria', id: 5,grade: 6 }
+];
+
+//! Mapear todos los estudiantes con una propiedad extra, course: "Labotarorio IV". El array original debe permanecer intacto
+
+const estudiantesMapeados = estudiantes.map(estudiantes => ({
+   ...estudiantes,
+   course: "Laboratorio IV" 
+}));
+
+//! Ordenar por nombre el array creado, esto muta el array. Recuerde que puede comparar dos strings usando localeCompare
+
+estudiantesMapeados.sort((a,b) => a.name.localeCompare(b.name));
+
+//! Separar en dos arrays los estudiantes aprobados y desaprobados
+
+const estudiantesAprobados = estudiantesMapeados.filter(estudiantes => estudiantes.grade > 5);
+
+const estudiantesDesaprobados = estudiantesMapeados.filter(estudiantes => estudiantes.grade < 6);
+
+//! Calcular el promedio de todos los estudiantes
+
+const promedioEstudiantes = estudiantesMapeados.reduce((acumulador, estudiantes) => {
+    return acumulador += estudiantes.grade
+},0) / estudiantesMapeados.length;
+
+promedioEstudiantes.toFixed(2);
+
+
+
+class StudentRepository {
+    #students
+    constructor() {
+        this.#students = new Map()
+    }
+    getStudent = function(id) {
+        if(this.#students.has(id)) return this.#students.get(id)
+        else throw new Error(`El estudiante con el id ${id} no existe.`) //! Manejar el error en el entorno superior
+    }
+    addStudent = function(estudiante) {
+        if(!this.#students.has(estudiante.id)) this.#students.set(estudiante.id, estudiante);
+        else throw new Error(`El estudiante con el id ${estudiante.id} ya existe`)
+    }
+    deleteStudent = function(id) {
+        if(this.#students.has(id)) {
+            this.#students.delete(id);
+            return true
+        } 
+        else throw new Error(`El estudiante con el id ${id} no existe.`)
+    }
+}
+
+class estudianteRepo {
+    #estudiante
+    constructor() {
+        this.#estudiante = new Set();
+    }
+    getEstudiante = function(id) {
+        for (const estudiante of this.#estudiante) {
+            if(estudiante.id === id) return estudiante;
+        }
+        return null;
+    }
+    addEstudiante = function(estudiante) {
+        if(this.getEstudiante(estudiante.id)) throw new Error("El estudiante ya existe")
+        else this.#estudiante.add(estudiante);
+    }
+    deleteEstudiante = function(estudiante) {
+        if(this.getEstudiante(estudiante.id)) this.#estudiante.delete(estudiante);
+        else throw new Error("No se encontro el estudiante")
+    }
+}
+
+
+class userDummy {
+    #id
+    #password
+    constructor(id, username, password, email, isActive) {
+        this.#id = id
+        this.username = username
+        this.#password = password
+        this.email = email
+        this.isActive = isActive
+    }
+    get id() {
+        return this.#id;
+    }
+    get password() {
+        return this.#password;
+    }
+    set password(pass) {
+        this.#password = pass;
+    }
+}
+
+
