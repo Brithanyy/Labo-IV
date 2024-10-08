@@ -82,6 +82,9 @@ class StudentRepository {
     constructor() {
         this.#students = new Map()
     }
+    get students() {
+        return this.#students
+    }
     getStudent = function(id) {
         if(this.#students.has(id)) return this.#students.get(id)
         else throw new Error(`El estudiante con el id ${id} no existe.`) //! Manejar el error en el entorno superior
@@ -103,6 +106,9 @@ class estudianteRepo {
     #estudiante
     constructor() {
         this.#estudiante = new Set();
+    }
+    get estudiante() {
+        return this.#estudiante;
     }
     getEstudiante = function(id) {
         for (const estudiante of this.#estudiante) {
@@ -139,6 +145,46 @@ class userDummy {
     }
     set password(pass) {
         this.#password = pass;
+    }
+}
+
+
+//!Ejercicio 9 -> Async Await
+const getUsers = () => {
+    return fetch('https://api.example.com/users');
+}
+
+getUsers()
+.then(response => {
+    if (response.ok) {
+        return response.json();
+    } else {
+        throw new Error(`El servidor respondió: ${response.status} ${response.statusText}`);
+    }
+})
+.then(users => {
+    users.filter(user => user.isActive)
+        .sort((a, b) => a.username.localeCompare(b.username))
+        .forEach(console.log);
+})
+.catch(console.log);
+
+//! AHORA HAY QUE PASARLO CON ASYNC AWAIT
+const url = 'https://api.example.com/users';
+
+async function getUsers9() {
+    try {
+        const response = await fetch(url);
+        if(response.ok){
+            const users = await response.json();
+            const usuariosFiltrados = users.filter(user => user.isActive).sort((a,b) => a.username.localeCompare(b.username));
+
+            for (const user of usuariosFiltrados) {
+                console.log(user)
+            }
+        }  else throw new Error(`El servidor respondió: ${response.status} ${response.statusText}`);
+    } catch (error) {
+        console.error(error);
     }
 }
 

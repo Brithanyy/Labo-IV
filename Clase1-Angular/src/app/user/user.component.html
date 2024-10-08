@@ -1,0 +1,25 @@
+<section>
+     <div class="main">
+          <p *ngIf="estaLogeado">Bienvenida, {{ username }} </p>
+           <img *ngIf="estaLogeado" (click)="evento()" 
+         src="https://images.unsplash.com/photo-1634926878768-2a5b3c42f139?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fGF2YXRhcnxlbnwwfHwwfHx8MA%3D%3D" 
+         alt="photo">
+           <p *ngIf="estaLogeado"><button (click)="logOut()">Cerrar Sesión</button></p>
+     </div>
+    
+    <div class="main">  	
+     <input type="checkbox" id="chk" aria-hidden="true">
+          <div class="login">
+               <label *ngIf="!estaLogeado" for="chk" aria-hidden="true">Log in</label>
+               <input *ngIf="!estaLogeado" class="input" type="text" name="username" placeholder="Username" [(ngModel)]="userNameInput" required>
+               <input *ngIf="!estaLogeado" class="input" type="password" name="password" placeholder="Password" [(ngModel)]="userPassInput" required>
+               <button *ngIf="!estaLogeado" (click)="logUser()">Log in</button>
+               
+          </div>
+     </div>
+  </section>
+
+
+
+
+  

@@ -41,3 +41,56 @@ const deleteUser2 = (id) => { //! EL DELETE ES PARA BORRAR
         })
         .catch(err => console.error(err))
 }
+
+//! Convirtiendolas a async/await
+
+async function getUsers() {
+    try {
+        const response = await fetch(url);
+        if(response.status !== 200) throw new Error("Error al obtener la informacion");
+        else{
+            const usuarios = await response.json();
+            console.log("Usuarios: ", usuarios);
+        }  
+    } catch (error) {
+        console.error(error);
+    }
+}
+
+async function postUser(usuario) {
+    try {
+        const response = await fetch(url, {method: 'POST', body: JSON.stringify(usuario), headers: {'Content-Type': 'application/json'}});
+        if(response.status !== 201) throw new Error("Error al agregar el usuario");
+        else {
+            const user = await response.json();
+            console.log("Usuario agregado con exito: ", user);
+        }
+    } catch (error) {
+        console.error(error);
+    }   
+}
+
+async function updateUser(id, usuario) {
+    try {
+        const response = await fetch(url+"/"+id, {method: 'PUT', body: JSON.stringify(usuario), headers: {'Content-Type': 'application/json'}});
+        if(response.status !== 200) throw new Error("No se pudo actualizar el usuario");
+        else {
+            const usuario = await response.json();
+            console.log("Usuario actualizado", usuario);
+        }
+    } catch (error) {
+        console.error(error);
+    }
+}
+
+async function deleteUser(id) {
+    try {
+        const response = await fetch(url+"/"+id, {method: 'DELETE'});
+        if(response.status !== 204) throw new Error("No se pudo eliminar el usuario");
+        else {
+            console.log("Usuario eliminado con exito")
+        }
+    } catch (error) {
+        console.error(error);
+    }
+} 
