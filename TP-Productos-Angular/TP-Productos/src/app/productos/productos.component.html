@@ -1,0 +1,60 @@
+
+    <section>
+        <ul>
+            <h3>Lista de Productos</h3>
+            <li *ngFor="let producto of productos">
+                {{producto.id}}
+                {{producto.nombre}}
+                {{producto.precio}}
+            </li>
+        </ul>
+       
+        <ul class="list2">
+            <h3>Mostrando los productos con descuento</h3>
+            <li *ngFor="let producto of productos">
+                <p [style.color]="producto.descuento ? 'green' : 'red'">{{producto.id}} {{producto.nombre}} {{producto.precio}} {{producto.descuento}}</p>
+            </li>
+        </ul>
+    </section>  
+
+    <section>
+        <h3>Agregar un nuevo producto</h3>
+        <label for="number">ID del Producto: </label>
+        <input type="number" [(ngModel)]="idInput">
+        <br>
+        <label for="text">Nombre del Producto: </label>
+        <input type=”text” [(ngModel)]="nombreInput">
+        <br>
+        <label for="number">Precio del Producto: </label>
+        <input type=”number” [(ngModel)]="precioInput">
+        <br>
+        <label for="opciones">Descuento:</label>
+        <select id="opciones" [(ngModel)]="opcionInput">
+          <option [ngValue]="true">True</option>
+          <option [ngValue]="false">False</option>
+        </select>
+        <br>
+        <button (click)="agregarProducto()">Agregar Producto</button>
+    </section>
+
+    <section>
+        <h3>Eliminar Producto</h3>
+        <label for="number">ID del producto a Eliminar: </label>
+        <input type=”number” [(ngModel)]="idInputDelete">
+        <br>
+        <button (click)="alertProductoEliminado(idInputDelete)">Eliminar Producto</button>
+    </section>
+
+    <section>
+        <h3>Aplicar Descuento</h3>
+        <label for="number">ID del producto a Aplicar el descuento: </label>
+        <input type=”number” [(ngModel)]="idInputDescuento">
+        <br>
+        <button (click)="aplicarDescuento(idInputDescuento)">Agregar Descuento</button>
+        <br>
+        <h3>Quitar Descuento</h3>
+        <label for="number">ID del producto a quitar el descuento: </label>
+        <input type=”number” [(ngModel)]="idInputDescuento">
+        <br>
+        <button (click)="quitarDescuento(idInputDescuento)">Quitar Descuento</button>
+    </section>

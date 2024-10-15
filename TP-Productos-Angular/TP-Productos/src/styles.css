@@ -1,0 +1,17 @@
+/* You can add global styles to this file, and also import other style files */
+body {
+    background-color: #666A86;
+    color: white;
+    margin: 0 auto;
+    text-align: center;
+
+}
+button {
+    margin-top: 1rem;
+    margin-right: 0.5rem;
+    padding: 0.5rem;
+    font-size: large;
+    color: white;
+    background-color: #413C58;
+    border: 2px solid white;
+}

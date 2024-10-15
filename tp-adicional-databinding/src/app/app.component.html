@@ -1,0 +1,10 @@
+<p> Valor del focus: {{focus}}</p>
+<div>
+  <p [contentEditable]= "contentEditable" >{{inputText}}</p>
+  <label for="text">Toca el boton para editar: </label>
+  <input type="text" name="text" id="text" *ngIf="contentEditable" [(ngModel)]="inputText">
+  <br>
+  <br>
+  <button (click)="toggleContentEditable()">Editar</button>
+  <h2 (mouseover)="onMouseOver()">Mostrando el valor de focus {{focus}}</h2>
+</div>
