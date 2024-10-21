@@ -1,0 +1,69 @@
+.login-img {
+    width: 200px; /* Ajusta el tamaño de la imagen */
+    height: 200px;
+    display: block;
+    margin: 0 auto 20px; /* Añadir un margen inferior para espacio */
+}
+.transparent-card {
+    background-color: #0C8346; /* Transparencia */
+    border: 1px solid rgba(0, 0, 0, 0.1);       /* Borde leve */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  /* Sombra suave */
+    border-radius: 8px;                        /* Bordes redondeados opcionales */
+    max-width: 300px;                         /* Ancho máximo de 300px */
+    width: 100%;  
+    margin: 0 auto;
+    margin-top: 10rem;                           
+}
+
+.redes-sociales {
+    display: flex;
+    justify-content: center; /* Centra los iconos horizontalmente */
+    gap: 20px; /* Añade espacio entre los iconos */
+    margin-top: 20px; /* Espacio superior */
+}
+
+.redes-sociales .social-link1,
+.redes-sociales .social-link2 {
+    width: 30%; /* Ajusta el tamaño de los enlaces para hacerlos más pequeños */
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent; /* Fondo transparente */
+    border-radius: 50%; /* Bordes redondeados */
+    transition: background-color 0.3s, transform 0.3s; /* Suaviza el cambio de fondo y tamaño */
+}
+
+.redes-sociales .social-link1:hover {
+    background-color: #12a50b; /* Fondo al hacer hover */
+    transform: scale(1.2); /* Aumenta el tamaño al hacer hover */
+}
+
+.redes-sociales .social-link2:hover {
+    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    transform: scale(1.2);
+}
+
+.redes-sociales svg {
+    width: 70%; /* Ajusta el tamaño de los iconos */
+    height: 70%;
+    transition: transform 0.3s; /* Animación de los iconos */
+}
+
+@keyframes bounce_613 {
+    40% {
+      transform: scale(1.4);
+    }
+  
+    60% {
+      transform: scale(0.8);
+    }
+  
+    80% {
+      transform: scale(1.2);
+    }
+  
+    100% {
+      transform: scale(1);
+    }
+  } 

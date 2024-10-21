@@ -1,0 +1,35 @@
+
+.form-control:focus {
+    box-shadow: 0 0 5px 3px rgba(34, 181, 78, 0.568); 
+}
+
+.login-img {
+    width: 150px; /* Ajusta el tamaño de la imagen */
+    height: 150px;
+    display: block;
+    margin: 0 auto 20px; /* Añadir un margen inferior para espacio */
+}
+
+.transparent-card {
+    background-color: rgba(255, 255, 255, 0.5); /* Transparencia */
+    border: 1px solid rgba(0, 0, 0, 0.1);       /* Borde leve */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  /* Sombra suave */
+    border-radius: 8px;                        /* Bordes redondeados opcionales */
+    max-width: 300px;                         /* Ancho máximo de 300px */
+    width: 100%;  
+    margin: 0 auto;
+    margin-top: 10rem;                            /* Ancho del 100% hasta el max-width */
+}
+.border-transparent {
+    background-color: rgba(255, 255, 255, 0.5); /* Transparencia */
+    border: 1px solid rgba(0, 0, 0, 0.1);       /* Borde leve */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  /* Sombra suave */
+}
+
+.input-group .botonPass {
+    border-left: none; /* Eliminar borde izquierdo del botón */
+    border-right: none;
+}
+.botonPass:focus {
+    box-shadow: 0 0 5px 3px rgba(34, 181, 78, 0.568); 
+}

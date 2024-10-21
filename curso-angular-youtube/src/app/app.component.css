@@ -1,0 +1,11 @@
+/* componente-principal.component.css */
+:host {
+    display: block;
+    height: 100vh; /* Ocupa toda la altura de la ventana */
+    overflow: hidden; /* Evita el scroll */
+}
+
+.d-flex {
+    flex-direction: column; /* Asegura que los componentes se coloquen uno encima del otro */
+}
+
