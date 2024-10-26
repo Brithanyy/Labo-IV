@@ -1,0 +1,37 @@
+<body class="d-flex justify-content-center align-items-center vh-100">
+  
+    <div class="card container mt-5 w-50">
+      <div class="card-body text-center">
+        <h1 class="text-center">Formulario Reactivo</h1>
+        <form action="" class="d-flex flex-column align-items-center" [formGroup]="formRegister" (ngSubmit)="datosFormulario()">
+
+          <div class="form-floating mb-4 w-75">
+
+            <input type="text" class="form-control" id="floatingInput" placeholder="Username" formControlName = "username"> 
+            <label for="floatingInput">Username</label>
+            <!--! Con formControl sincronizamos las variables del componente con el formulario --> 
+
+            <div class="alert alert-danger mt-2" [hidden]="username.valid || username.pristine"> <!--!esto esta hecho con getter-->
+               <small>El usuario es obligatorio</small>
+            </div>
+
+          </div>
+
+          <div class="form-floating mb-4 w-75">
+
+            <input type="password" class="form-control" id="floatingPassword" placeholder="Password" formControlName = "password">
+            <label for="floatingPassword">Password</label>
+
+            <div class="alert alert-danger" [hidden]="pass.valid || pass.pristine">
+               <small *ngIf="pass.errors?.['required']">La contraseña es obligatoria</small>
+               <small *ngIf="pass.errors?.['pattern']">La contraseña debe contener al menos una letra, numeros y caracteres especiales (minimo 8 caracteres)</small> 
+            </div>
+          </div>  
+
+          <button class="btn btn-primary mt-5 w-75" [disabled]="formRegister.invalid">Login</button>
+        </form>  
+      </div>
+    </div>
+   
+  </body>
+

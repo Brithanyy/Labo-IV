@@ -1,35 +1,63 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-image: url('https://images.unsplash.com/photo-1568605114967-8130f3a36994?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+    background-size: cover; /* Mantiene la imagen cubriendo el área */
+    background-position: center center;
+    background-repeat: no-repeat;
+    animation: zoom 15s infinite alternate; /* Añadir animación */
+}
+
+@keyframes zoom {
+    0% {
+        background-size: 100vw 100vh; /* Tamaño inicial en unidades viewport */
+    }
+    100% {
+        background-size: 110vw 110vh; /* Tamaño final en unidades viewport */
+    }
+}
+
+.transparent-card {
+    background-color: rgba(255, 255, 255, 0.674);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  
+    border-radius: 8px;                        
+    max-width: 300px;                         
+    width: 90%;  /* Cambia a 90% para ser más responsivo */
+    padding: 20px;
+    margin: 10rem auto; /* Centra verticalmente y horizontalmente */
+    margin-bottom: 20rem;
+}
+
+.login-img {
+    width: 150px;
+    height: 150px;
+    display: block;
+    margin: 0 auto 20px;
+}
 
 .form-control:focus {
     box-shadow: 0 0 5px 3px rgba(34, 181, 78, 0.568); 
 }
 
-.login-img {
-    width: 150px; /* Ajusta el tamaño de la imagen */
-    height: 150px;
-    display: block;
-    margin: 0 auto 20px; /* Añadir un margen inferior para espacio */
-}
-
-.transparent-card {
-    background-color: rgba(255, 255, 255, 0.5); /* Transparencia */
-    border: 1px solid rgba(0, 0, 0, 0.1);       /* Borde leve */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  /* Sombra suave */
-    border-radius: 8px;                        /* Bordes redondeados opcionales */
-    max-width: 300px;                         /* Ancho máximo de 300px */
-    width: 100%;  
-    margin: 0 auto;
-    margin-top: 10rem;                            /* Ancho del 100% hasta el max-width */
-}
-.border-transparent {
-    background-color: rgba(255, 255, 255, 0.5); /* Transparencia */
-    border: 1px solid rgba(0, 0, 0, 0.1);       /* Borde leve */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  /* Sombra suave */
-}
-
 .input-group .botonPass {
-    border-left: none; /* Eliminar borde izquierdo del botón */
+    border-left: none;
     border-right: none;
 }
+
 .botonPass:focus {
     box-shadow: 0 0 5px 3px rgba(34, 181, 78, 0.568); 
+}
+
+/* Media Queries para ajustar el tamaño de la tarjeta en pantallas pequeñas */
+@media (max-width: 576px) {
+    .transparent-card {
+        width: 95%; /* Ancho máximo en dispositivos pequeños */
+    }
+
+    .login-img {
+        width: 120px; /* Ajusta el tamaño de la imagen en pantallas pequeñas */
+        height: 120px;
+    }
 }
