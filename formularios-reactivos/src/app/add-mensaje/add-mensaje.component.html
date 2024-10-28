@@ -1,0 +1,18 @@
+
+<div class="card container mt-5 w-50"> 
+    <div class="card-body text-center">
+        <h1 class="text-center">Formulario Mensaje</h1>
+        <form  class="d-flex flex-column align-items-center" action="" [formGroup]="formulario_mensaje" (ngSubmit)="addMensaje()">
+            <div class="form-floating mb-4 w-75">
+            <input type="text" class="form-control" id="floatingInput" placeholder="Username" formControlName = "mensaje"> 
+            <label for="floatingInput">Mensaje</label>
+            <div class="alert alert-danger mt-2" [hidden]="mensaje?.valid || mensaje?.pristine
+            "> <!--!esto esta hecho con getter-->
+                <small>El mensaje es obligatorio</small>
+             </div>
+            </div>
+             <button class="btn btn-primary mt-5 w-75" [disabled]="formulario_mensaje.invalid">Agregar Mensaje</button>
+        </form>
+    </div>
+</div>
+

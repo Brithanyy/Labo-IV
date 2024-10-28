@@ -1,0 +1,50 @@
+<div class="container">
+    <form [formGroup]="formulario" class="form">
+        <h2>Agregar Personaje</h2>
+        <label>Name: </label>
+        <input type="text" formControlName = 'name'>
+
+        <br>
+        <small [hidden]="name?.valid || name?.pristine">
+            El campo name es obligatorio
+        </small>
+
+        <br>
+        <br>
+    
+        <label>Apodo: </label>
+        <input type="text" formControlName = 'apodo'>
+
+        <br>
+
+        <small [hidden]="apodo?.valid || apodo?.pristine">
+            El campo apodo es obligatorio
+        </small>
+        <br>
+        <br>
+    
+        <label>Skill: </label>
+        <input type="text" formControlName = 'skill'>
+        <br>
+
+        <small [hidden]="skill?.valid || skill?.pristine">
+            El campo skill es obligatorio
+        </small>
+        <br>
+        <br>
+    
+        <label>Description: </label>
+        <input type="text" formControlName = 'description'>
+        <br>
+
+        <small [hidden]="description?.valid || description?.pristine">
+            El campo description es obligatorio
+        </small>
+        <br>
+        <br>
+    
+        <button [disabled]="formulario.invalid">Agregar Personaje</button>
+    
+    </form>
+</div>
+

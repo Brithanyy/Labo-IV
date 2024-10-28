@@ -9,6 +9,7 @@ body {
   background-repeat: no-repeat; /* Evita la repetición de la imagen */
   animation: zoom 15s infinite alternate; /* Animación de zoom en el fondo */
   overflow: hidden; /* Evita el scroll de la página */
+
 }
 
 /*! Animación para el zoom del fondo */
