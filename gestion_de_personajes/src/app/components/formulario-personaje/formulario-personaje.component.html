@@ -1,0 +1,37 @@
+<h1>FORMULARIO CREAR PERSONAJE</h1>
+<div>
+    <form [formGroup]="formulario" (submit)="addPersonaje()">
+        <label for="">ID: </label>
+        <input type="number" formControlName = "id">
+        <br>
+        <small [hidden]="id?.valid || id?.pristine">El campo id es requerido</small>
+        <br>
+        <br>
+        <label for="">Nombre Personaje: </label>
+        <input type="text" formControlName = 'name'>
+        <br>
+        <small [hidden]="name?.valid || name?.pristine">El campo Nombre es requerido</small>
+        <br>
+        <br>
+        <label for="">Apodo: </label>
+        <input type="text" formControlName = 'apodo'>
+        <br>
+        <small [hidden]="apodo?.valid || apodo?.pristine">El campo apodo es requerido</small>
+        <br>
+        <br>
+        <label for="">Habilidad: </label>
+        <input type="text" formControlName = 'skill'>
+        <br>
+        <small [hidden]="skill?.valid || skill?.pristine">El campo habilidad es requerido</small>
+        <br>
+        <br>
+        <label for="">Descripcion: </label>
+        <input type="text" formControlName = 'description'>
+        <br>
+        <small [hidden]="description?.valid || description?.pristine">El campo descripcion es requerido</small>
+        <br>
+        <br>
+
+        <button [disabled]="formulario.invalid">Agregar Personaje</button>
+    </form>
+</div>

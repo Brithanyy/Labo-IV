@@ -45,7 +45,7 @@ export class CharacterFormComponentComponent {
 
     ///Aqui tengo que agregar para que este personaje lo emita a la lista?
 
-    this.addPersonajeDB()
+    this.addPersonajeDB();
     this.formulario.reset();
   }
 

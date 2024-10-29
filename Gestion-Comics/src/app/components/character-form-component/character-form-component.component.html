@@ -1,5 +1,5 @@
 <div class="container">
-    <form [formGroup]="formulario" class="form">
+    <form [formGroup]="formulario" class="form" (ngSubmit)="addPersonaje()">
         <h2>Agregar Personaje</h2>
         <label>Name: </label>
         <input type="text" formControlName = 'name'>

@@ -1,0 +1,16 @@
+a {
+    color: white;
+    font-size: x-large;
+    margin-left: 2rem;
+}
+
+nav {
+    background-color: darkblue;
+    height: 3rem;
+}
+ul {
+    text-align: center;
+    margin-top: 0;
+    padding: 0.5rem;
+
+}

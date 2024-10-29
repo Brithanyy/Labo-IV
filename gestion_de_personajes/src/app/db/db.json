@@ -1,0 +1,18 @@
+{
+  "personajes": [
+    {
+      "id": "2",
+      "name": "Rocio",
+      "apodo": "Rouse",
+      "skill": "Correr",
+      "description": "La corredora"
+    },
+    {
+      "name": "Brisa",
+      "apodo": "Brithany",
+      "skill": "Saltar",
+      "description": "salto mucho",
+      "id": "0"
+    }
+  ]
+}
